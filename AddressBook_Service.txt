@@ -4,3 +4,17 @@ mysql> use Address_Book_Service;
 Database changed
 mysql> create table address_book_table(first varchar(20),last varchar(20),city varchar(20),state varchar(20),zip int ,phone_number int,email varchar(30),primary key(first));
 Query OK, 0 rows affected (0.04 sec)
+mysql>  insert into address_book_table(first,last,city,state,zip,phone_number,email) values("Manoj","Kumar","Jind","Haryana",126112,99999,"mb@gmail.com"),("Sunil","Dutt","Jind","Haryana",126112,88888,"sd@gmail.com"),("Naveen","Saini","Karnal","Haryana",132001,77777,"ns@gmail.com"),("Roshan","Sharma","Panipat","Haryana",131001,66666,"rs@gmail.com");
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from address_book_table;
++--------+--------+---------+---------+--------+--------------+--------------+
+| first  | last   | city    | state   | zip    | phone_number | email        |
++--------+--------+---------+---------+--------+--------------+--------------+
+| Manoj  | Kumar  | Jind    | Haryana | 126112 |        99999 | mb@gmail.com |
+| Naveen | Saini  | Karnal  | Haryana | 132001 |        77777 | ns@gmail.com |
+| Roshan | Sharma | Panipat | Haryana | 131001 |        66666 | rs@gmail.com |
+| Sunil  | Dutt   | Jind    | Haryana | 126112 |        88888 | sd@gmail.com |
++--------+--------+---------+---------+--------+--------------+--------------+
+4 rows in set (0.00 sec)
