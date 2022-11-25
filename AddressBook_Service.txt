@@ -106,3 +106,19 @@ mysql> select * from address_book_table;
 | Sunil  | Dutt   | Family forever    | Family            | Jind       | Haryana | 126112 |        88888 | sd@gmail.com |
 +--------+--------+-------------------+-------------------+------------+---------+--------+--------------+--------------+
 3 rows in set (0.00 sec)
+
+mysql> select count(address_book_type) from address_book_table where address_book_type = "Friends ";
++--------------------------+
+| count(address_book_type) |
++--------------------------+
+|                        1 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select count(address_book_type) from address_book_table where address_book_type = 'Family ';
++--------------------------+
+| count(address_book_type) |
++--------------------------+
+|                        1 |
++--------------------------+
+1 row in set (0.00 sec)
