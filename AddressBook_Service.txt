@@ -70,3 +70,39 @@ mysql> select * from address_book_table where state =  'Haryana' order by first 
 | Manoj  | Kumar  | Chandigarh | Haryana | 126112 |        99999 | mb@gmail.com |
 +--------+--------+------------+---------+--------+--------------+--------------+
 3 rows in set (0.00 sec)
+
+mysql> alter table address_book_table add address_book_name varchar(20) after last ;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table address_book_table add address_book_type varchar(20) after address_book_name ;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update address_book_table set address_book_name = "Friends Forever" where first = 'Roshan';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update address_book_table set address_book_name = "Family forever " where first in("Sunil");
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+mysql> update address_book_table set address_book_type = "Family " where first in("Sunil");
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+mysql> update address_book_table set address_book_type = "Friends " where first in("Roshan");
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from address_book_table;
++--------+--------+-------------------+-------------------+------------+---------+--------+--------------+--------------+
+| first  | last   | address_book_name | address_book_type | city       | state   | zip    | phone_number | email        |
++--------+--------+-------------------+-------------------+------------+---------+--------+--------------+--------------+
+| Manoj  | Kumar  | NULL              | NULL              | Chandigarh | Haryana | 126112 |        99999 | mb@gmail.com |
+| Roshan | Sharma | Friends Forever   | Friends           | Panipat    | Haryana | 131001 |        66666 | rs@gmail.com |
+| Sunil  | Dutt   | Family forever    | Family            | Jind       | Haryana | 126112 |        88888 | sd@gmail.com |
++--------+--------+-------------------+-------------------+------------+---------+--------+--------------+--------------+
+3 rows in set (0.00 sec)
