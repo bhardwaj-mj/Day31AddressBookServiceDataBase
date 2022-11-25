@@ -1,2 +1,6 @@
 mysql> create  database Address_Book_Service;
 Query OK, 1 row affected (0.01 sec)
+mysql> use Address_Book_Service;
+Database changed
+mysql> create table address_book_table(first varchar(20),last varchar(20),city varchar(20),state varchar(20),zip int ,phone_number int,email varchar(30),primary key(first));
+Query OK, 0 rows affected (0.04 sec)
